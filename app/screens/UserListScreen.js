@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   View,
   ActivityIndicator,
-  Button
+  Button,
+  
 } from "react-native";
 import { Icon } from "expo";
 import { DrawerActions } from "react-navigation";

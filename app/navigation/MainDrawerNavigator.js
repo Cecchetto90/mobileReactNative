@@ -18,6 +18,7 @@ import SecondScreen from "../screens/SecondScreen";
 import ThirdScreen from "../screens/ThirdScreen";
 import FourthScreen from "../screens/FourthScreen";
 import ReusableScreen from "../screens/ReusableScreen";
+import UserListScreen from "../screens/UserListScreen";
 
 const DEVICE_WIDTH = Dimensions.get("window").width;
 
@@ -34,9 +35,19 @@ const drawerConfig = {
   )
 };
 
+const UserStack = createStackNavigator({
+  UserList : UserListScreen,
+  Profilo : ReusableScreen
+});
+
+UserStack.navigationOptions = ({ navigation }) =>  ({
+  header : null
+});
+
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
-  Profilo: ReusableScreen
+  Profilo: ReusableScreen,
+  UserStack : UserStack
 });
 
 const SecondStack = createStackNavigator({
@@ -54,7 +65,8 @@ export default createDrawerNavigator(
     Home: HomeStack,
     Second: SecondStack,
     Third: ThirdStack,
-    Profilo: ReusableScreen
+    Profilo: ReusableScreen,
+    UserList : UserListScreen
   },
   drawerConfig
 );

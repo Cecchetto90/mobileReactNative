@@ -85,7 +85,7 @@ export default class HomeScreen extends React.Component {
 
             <TouchableOpacity
             onPress={() => {
-                this.props.navigation.navigate("")
+                this.props.navigation.navigate("UserList")
             }}>
             <Text style={styles.helpLinkText}>
               Elenco Utenti
